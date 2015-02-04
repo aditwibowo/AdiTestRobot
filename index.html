@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="robotApp">
+<head>
+  
+<!-- Meta Tags -->
+<meta charset="utf-8">
+<title>Robotic Test Example</title>
+<link href="css/main.css" rel="stylesheet" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/angular.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <div class="viewport" ng-controller="viewportCtrl">
+        
+    </div>
+    <div class="command">
+        <input type="button" value="Place Robot" class="place">
+        <input type="button" value="Turn Right" class="right">
+        <input type="button" value="Turn Left" class="left">
+        <input type="button" value="Move" class="move">
+        <input type="button" value="Save" class="save">            
+        <input type="button" value="Report" class="report" ng-controller="reportCtrl"">			
+			
+        <div class="coordinate-now">
+            <h2></h2>
+        </div>
+    </div>
+
+<table>
+  <tr ng-repeat="report in reports">
+    <td>[ {{ report.X }}, {{ report.Y }} ]</td>
+    <td>{{ report.Face }}</td>
+  </tr>
+</table>
+    
+</body>
+</html>
